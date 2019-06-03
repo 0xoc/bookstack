@@ -23,8 +23,8 @@ class AnswerInline(admin.TabularInline):
 
 
 class QuestionnaireAdmin(admin.ModelAdmin):
-    list_display = ('title',)
-    list_display_links = ['title', ]
+    list_display = ('text',)
+    list_display_links = ['text', ]
     inlines = [
         YesNoQuestionInline,
         MultipleChoiceQuestionInline,

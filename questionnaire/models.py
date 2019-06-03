@@ -14,10 +14,18 @@ class Questionnaire(models.Model):
         verbose_name = _('Questionnaire')
         verbose_name_plural = _('Questionnaires')
 
-    title = models.CharField(max_length=255, verbose_name=_('title'), help_text=_('title for Questionnaire'))
+    text = models.CharField(max_length=255, verbose_name=_('title'), help_text=_('title for Questionnaire'))
 
     # has yes_no_question.all()
     # has multiple_choice_question.all()
+
+    def add_yes_no_question(self, text):
+        YesNoQuestion.objects.create(text=text, question=self)
+
+    def add_multiple_choice_question(self, text, answers, is_single_choice=False):
+        tmp_mcq = MultipleChoiceQuestion.objects.create(text=text, is_single_choice=is_single_choice, question=self)
+        for answer in answers:
+            Answer.objects.create(text=answer, multiple_choice_question=tmp_mcq)
 
     def __str__(self):
         return self.title
@@ -75,7 +83,8 @@ class Answer(models.Model):
 
     text = models.CharField(max_length=100, verbose_name=_('text'),
                             help_text=_('text for answer of multiple choice questions'))
-    is_selected = models.BooleanField(verbose_name=_('is selected'), help_text=_('is an answer selected or not'))
+    is_selected = models.BooleanField(default=False, verbose_name=_('is selected'),
+                                      help_text=_('is an answer selected or not'))
     multiple_choice_question = models.ForeignKey(MultipleChoiceQuestion, on_delete=models.CASCADE,
                                                  related_name='answer',
                                                  verbose_name=_('answer for multiple choice questions'))
