@@ -18,6 +18,7 @@ class Questionnaire(models.Model):
 
     # has yes_no_question.all()
     # has multiple_choice_question.all()
+    # has descriptive_question.all()
 
     def add_question(self, text, answers=[], is_single_choice=False):
 
@@ -96,3 +97,20 @@ class Answer(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class DescriptiveQuestion(models.Model):
+    """
+    Descriptive Questions
+    """
+
+    question = models.ForeignKey(Questionnaire, related_name="descriptive_question",
+                                 on_delete=models.CASCADE, verbose_name=_('questionnaire'),
+                                 help_text=_('questionnaire of descriptive question'))
+
+    text = models.CharField(max_length=255, verbose_name=_("text")
+                            , help_text=_("text for descriptive question"))
+
+    description = models.TextField(max_length=1000, verbose_name=_("Description"),
+                                   help_text=_("Description for the asked question"), blank=True, null=True)
+
