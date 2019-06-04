@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 
 
 # Create your models here.
-
+# todo: add selection for multiple/single choice
 
 class Questionnaire(models.Model):
     """

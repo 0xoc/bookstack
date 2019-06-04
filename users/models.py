@@ -10,7 +10,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class UserProfile(models.Model):
     """
-    every user is given a profile which is associated with a django user
+        every user is given a profile which is associated with a django user
     """
 
     user = models.OneToOneField(User, related_name="user_profile",
