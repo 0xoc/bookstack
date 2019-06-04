@@ -20,18 +20,17 @@ class Questionnaire(models.Model):
     # has multiple_choice_question.all()
     # has descriptive_question.all()
 
-    def add_question(self, text, answers=[], is_single_choice=False):
+    def add_yes_no_question(self, text):
+        YesNoQuestion.objects.create(text=text, question=self)
 
-        # if is a yes no question
-        if not answers:
-            YesNoQuestion.objects.create(text=text, question=self)
+    def add_multiple_choice_question(self, text, answers=[], is_single_choice=False):
+        tmp_mcq = MultipleChoiceQuestion.objects.create(text=text, is_single_choice=is_single_choice, question=self)
 
-        # if it's a multiple choice
-        else:
-            tmp_mcq = MultipleChoiceQuestion.objects.create(text=text, is_single_choice=is_single_choice, question=self)
+        for answer in answers:
+            Answer.objects.create(text=answer, multiple_choice_question=tmp_mcq)
 
-            for answer in answers:
-                Answer.objects.create(text=answer, multiple_choice_question=tmp_mcq)
+    def add_descriptive_question(self, text):
+        DescriptiveQuestion.objects.create(text=text, question=self)
 
     def __str__(self):
         return self.title
