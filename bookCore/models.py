@@ -20,6 +20,8 @@ class Book(models.Model):
         verbose_name = _('Book')
         verbose_name_plural = _('Books')
 
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='users_books', verbose_name=_('user'),
+                             help_text=_('user of book'))
     title = models.CharField(max_length=255, verbose_name=_('title'), help_text=_('title of book'))
     # tag with classification author
     authors = models.ManyToManyField(Tag, related_name='authored_books', verbose_name=_('author'),
@@ -49,9 +51,22 @@ class Book(models.Model):
                                       help_text=_('category of book'))
     quality = models.ForeignKey(Questionnaire, on_delete=models.CASCADE, verbose_name=_('quality'),
                                 help_text=_('quality of book'))
-    is_verified = models.BooleanField(default=False)
+    is_verified = models.BooleanField(default=False, verbose_name=_('is verified'),
+                                      help_text=_('is the book verified or not'))
+
+    def __str__(self):
+        return self.title
 
 
 class Image(models.Model):
     image = models.ImageField(verbose_name=_('image'), help_text=_('image of book'))
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name=)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='image', verbose_name=_('book'),
+                             help_text=_('book images'))
+
+
+class BookRequest(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='request', verbose_name=_('book'),
+                             help_text=_('book requests'))
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_requested',
+                             verbose_name=_('user'), help_text=_('user requested'))
+    is_selected = models.BooleanField(default=False, verbose_name=_('is selected'), help_text=_('is user selected'))
