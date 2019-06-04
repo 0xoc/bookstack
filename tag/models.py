@@ -15,6 +15,14 @@ class Classification(models.Model):
 
     text = models.CharField(max_length=255, verbose_name=_('text'), help_text=_('text for a classification of tags.'))
 
+    def __str__(self):
+        return self.text
+
+    @property
+    def count(self):
+        lst = Tag.objects.filter(classification=self)
+        return len(lst)
+
 
 class Tag(models.Model):
     """
@@ -28,3 +36,6 @@ class Tag(models.Model):
     text = models.CharField(max_length=255, verbose_name=_('text'), help_text=_('text for tag'))
     classification = models.ForeignKey(Classification, on_delete=models.CASCADE, verbose_name=_('classification'),
                                        related_name='tag', help_text=_('classification for a tag'))
+
+    def __str__(self):
+        return self.text
