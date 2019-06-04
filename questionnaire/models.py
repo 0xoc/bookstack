@@ -103,6 +103,10 @@ class DescriptiveQuestion(models.Model):
     Descriptive Questions
     """
 
+    class Meta:
+        verbose_name = _('Descriptive Question')
+        verbose_name_plural = _('Descriptive Questions')
+
     question = models.ForeignKey(Questionnaire, related_name="descriptive_question",
                                  on_delete=models.CASCADE, verbose_name=_('questionnaire'),
                                  help_text=_('questionnaire of descriptive question'))
@@ -112,4 +116,3 @@ class DescriptiveQuestion(models.Model):
 
     description = models.TextField(max_length=1000, verbose_name=_("Description"),
                                    help_text=_("Description for the asked question"), blank=True, null=True)
-
