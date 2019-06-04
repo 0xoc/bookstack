@@ -31,11 +31,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'tag',
+    'tag.apps.TagConfig',
     'jet',
-    'questionnaire',
-    'bookCore',
-    'users',
+    'questionnaire.apps.QuestionnaireConfig',
+    'bookCore.apps.BookcoreConfig',
+    'users.apps.UsersConfig',
     'phonenumber_field',
     'django.contrib.admin',
     'django.contrib.auth',
