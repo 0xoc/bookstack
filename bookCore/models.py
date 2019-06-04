@@ -10,6 +10,10 @@ from questionnaire.models import Questionnaire
 types = (('sell', _('sell')),
          ('buy', _('buy')))
 
+classifications = {'author': 'author',
+                   'publisher': 'publisher',
+                   'translator': 'translator'}
+
 
 class Book(models.Model):
     """
@@ -24,13 +28,17 @@ class Book(models.Model):
                              help_text=_('user of book'))
     title = models.CharField(max_length=255, verbose_name=_('title'), help_text=_('title of book'))
     # tag with classification author
-    authors = models.ManyToManyField(Tag, related_name='authored_books', verbose_name=_('author'),
+    authors = models.ManyToManyField(Tag, related_name='authored_books',
+                                     limit_choices_to={'classification__text__in': [classifications['author'], ]},
+                                     verbose_name=_('author'),
                                      help_text=_('author(s) of book'))
     # tag with classification translator
     translators = models.ManyToManyField(Tag, related_name='translated_books', verbose_name=_('translator'),
+                                         limit_choices_to={'classification__text__in': [classifications['translator'], ]},
                                          help_text=_('translator(s) of book'), blank=True)
     # tag with classification publisher
     publisher = models.ForeignKey(Tag, related_name='published_books', on_delete=models.CASCADE,
+                                  limit_choices_to={'classification__text__in': [classifications['publisher'], ]},
                                   verbose_name=_('publisher'), help_text=_('publisher of book'))
     edition = models.PositiveIntegerField(verbose_name=_('edition'), help_text=_('edition of book'), blank=True,
                                           null=True)
@@ -70,3 +78,4 @@ class BookRequest(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='user_requested',
                              verbose_name=_('user'), help_text=_('user requested'))
     is_selected = models.BooleanField(default=False, verbose_name=_('is selected'), help_text=_('is user selected'))
+

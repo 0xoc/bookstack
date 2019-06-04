@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-04 18:42+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: bookCore/apps.py:7
+#, fuzzy
+#| msgid "Book"
+msgid "Book Core"
+msgstr "کتاب"
+
+#: bookCore/models.py:10
+msgid "sell"
+msgstr "فروش"
+
+#: bookCore/models.py:11
+msgid "buy"
+msgstr "خرید"
+
+#: bookCore/models.py:24
+msgid "Book"
+msgstr "کتاب"
+
+#: bookCore/models.py:25
+msgid "Books"
+msgstr "کتاب ها"
+
+#: bookCore/models.py:27 bookCore/models.py:79
+msgid "user"
+msgstr "کاربر"
+
+#: bookCore/models.py:28
+msgid "user of book"
+msgstr "کاربر"
+
+#: bookCore/models.py:29 questionnaire/models.py:17
+msgid "title"
+msgstr "عنوان"
+
+#: bookCore/models.py:29
+msgid "title of book"
+msgstr "عنوان کتاب"
+
+#: bookCore/models.py:33
+msgid "author"
+msgstr "نویسنده"
+
+#: bookCore/models.py:34
+msgid "author(s) of book"
+msgstr "نویسنده (های) کتاب"
+
+#: bookCore/models.py:36
+msgid "translator"
+msgstr "مرترجم"
+
+#: bookCore/models.py:38
+msgid "translator(s) of book"
+msgstr "مترجم (های) کتاب"
+
+#: bookCore/models.py:42
+msgid "publisher"
+msgstr "ناشر"
+
+#: bookCore/models.py:42
+msgid "publisher of book"
+msgstr "ناشر کتاب"
+
+#: bookCore/models.py:43
+msgid "edition"
+msgstr "ویرایش"
+
+#: bookCore/models.py:43
+msgid "edition of book"
+msgstr "ویرایش کتاب"
+
+#: bookCore/models.py:45
+msgid "page count"
+msgstr "تعداد صفحات"
+
+#: bookCore/models.py:45
+msgid "page count of book"
+msgstr "تعداد صفحات کتاب"
+
+#: bookCore/models.py:49
+msgid "volume"
+msgstr "جلد"
+
+#: bookCore/models.py:49
+msgid "volume of book"
+msgstr "جلد کتاب"
+
+#: bookCore/models.py:50
+msgid "publication_year"
+msgstr "سال چاپ"
+
+#: bookCore/models.py:51
+msgid "publication year of book"
+msgstr "سال چاپ کتاب"
+
+#: bookCore/models.py:52
+msgid "original price"
+msgstr "قیمت پشت جلد"
+
+#: bookCore/models.py:53
+msgid "original price of book"
+msgstr "قیمت پشت جلد کتاب"
+
+#: bookCore/models.py:54
+msgid " price"
+msgstr "قیمت"
+
+#: bookCore/models.py:55
+msgid "price of book"
+msgstr "قیمت کتاب"
+
+#: bookCore/models.py:58
+msgid "category"
+msgstr "دسته بندی"
+
+#: bookCore/models.py:59
+msgid "category of book"
+msgstr "دسته بندی کتاب"
+
+#: bookCore/models.py:60
+msgid "quality"
+msgstr "کیفیت"
+
+#: bookCore/models.py:61
+msgid "quality of book"
+msgstr "کیفیت کتاب"
+
+#: bookCore/models.py:62
+msgid "is verified"
+msgstr "وضعیت تایید"
+
+#: bookCore/models.py:63
+msgid "is the book verified or not"
+msgstr "نشان دهنده تایید شدن یا نشدن کتاب"
+
+#: bookCore/models.py:70
+msgid "image"
+msgstr "تصویر"
+
+#: bookCore/models.py:70
+msgid "image of book"
+msgstr "تصویر کتاب"
+
+#: bookCore/models.py:71 bookCore/models.py:76
+msgid "book"
+msgstr "کتاب"
+
+#: bookCore/models.py:72
+msgid "book images"
+msgstr "تصویر های کتاب"
+
+#: bookCore/models.py:77
+msgid "book requests"
+msgstr "درخواست های کتاب"
+
+#: bookCore/models.py:79
+msgid "user requested"
+msgstr "درخواست های کاربر"
+
+#: bookCore/models.py:80 questionnaire/models.py:91
+msgid "is selected"
+msgstr "انتخاب شده"
+
+#: bookCore/models.py:80
+msgid "is user selected"
+msgstr "آیا کاربر انتخاب شده"
+
+#: questionnaire/apps.py:7 questionnaire/models.py:14
+msgid "Questionnaire"
+msgstr "پرسشنامه"
+
+#: questionnaire/models.py:15
+msgid "Questionnaires"
+msgstr "پرسشنامه ها"
+
+#: questionnaire/models.py:17
+msgid "title for Questionnaire"
+msgstr "عنوان پرسشنامه"
+
+#: questionnaire/models.py:45
+msgid "Yes No Question"
+msgstr "سوال بله یا خیر"
+
+#: questionnaire/models.py:46
+msgid "Yes No Questions"
+msgstr "سوای های بله یا خیر"
+
+#: questionnaire/models.py:48 questionnaire/models.py:70
+#: questionnaire/models.py:89 questionnaire/models.py:114 tag/models.py:16
+#: tag/models.py:36
+msgid "text"
+msgstr "عنوان"
+
+#: questionnaire/models.py:48
+msgid "text of the yes no question"
+msgstr "عنوان سوال"
+
+#: questionnaire/models.py:49
+msgid "is ticked"
+msgstr "انتخاب شده؟"
+
+#: questionnaire/models.py:50
+msgid "is ticked for yes or no questions"
+msgstr "آیا انتخاب شده؟"
+
+#: questionnaire/models.py:52 questionnaire/models.py:68
+#: questionnaire/models.py:111
+msgid "questionnaire"
+msgstr "پرسشنامه ها"
+
+#: questionnaire/models.py:52
+msgid "questionnaire of yes no question"
+msgstr "پرسشنامه ی سوال بله یا خیر"
+
+#: questionnaire/models.py:64
+msgid "Multiple Choice Question"
+msgstr "سوال چند جوابی"
+
+#: questionnaire/models.py:65
+msgid "Multiple Choice Questions"
+msgstr "سوال های چند جوابی"
+
+#: questionnaire/models.py:69
+msgid "questionnaire of multiple choice question"
+msgstr "پرسشنامه سوال چند جوابی"
+
+#: questionnaire/models.py:70
+msgid "text for multiple choice question"
+msgstr "عنوان"
+
+#: questionnaire/models.py:71
+msgid "is single choice"
+msgstr "آیا تک انتخابی است؟"
+
+#: questionnaire/models.py:72
+msgid "is single choice for multiple choice questions"
+msgstr "آیا تک انتخابی است؟"
+
+#: questionnaire/models.py:86
+msgid "Answer"
+msgstr "جواب"
+
+#: questionnaire/models.py:87
+msgid "Answers"
+msgstr "جواب ها"
+
+#: questionnaire/models.py:90
+msgid "text for answer of multiple choice questions"
+msgstr "عنوان"
+
+#: questionnaire/models.py:92
+msgid "is an answer selected or not"
+msgstr "آیا جواب انتخاب شده"
+
+#: questionnaire/models.py:95
+msgid "answer for multiple choice questions"
+msgstr "جواب سوال چندجوابی"
+
+#: questionnaire/models.py:107
+msgid "Descriptive Question"
+msgstr "سوال تشریحی"
+
+#: questionnaire/models.py:108
+msgid "Descriptive Questions"
+msgstr "سوال های تشریحی"
+
+#: questionnaire/models.py:112
+msgid "questionnaire of descriptive question"
+msgstr "پرسشنامه سوال تشریحی"
+
+#: questionnaire/models.py:115
+msgid "text for descriptive question"
+msgstr "عنوان"
+
+#: questionnaire/models.py:117
+msgid "Description"
+msgstr "توضیحات"
+
+#: questionnaire/models.py:118
+msgid "Description for the asked question"
+msgstr "توضیح سوال"
+
+#: tag/apps.py:7 tag/models.py:33
+msgid "Tag"
+msgstr "تگ"
+
+#: tag/models.py:13
+msgid "Classification"
+msgstr "طبقه بندی"
+
+#: tag/models.py:14
+msgid "Classifications"
+msgstr "طبقه بندی ها"
+
+#: tag/models.py:16
+msgid "text for a classification of tags."
+msgstr "عنوان"
+
+#: tag/models.py:34
+msgid "Tags"
+msgstr "تگ ها"
+
+#: tag/models.py:36
+msgid "text for tag"
+msgstr "عنوان"
+
+#: tag/models.py:37
+msgid "classification"
+msgstr "طبقه بندی"
+
+#: tag/models.py:38
+msgid "classification for a tag"
+msgstr "طبقه بندی تگ"
+
+#: users/apps.py:7
+msgid "Users"
+msgstr "کاربران"
+
+#: users/models.py:17 users/models.py:18
+msgid "Django User"
+msgstr "کاربر جنگو"
+
+#: users/models.py:20
+msgid "User's Avatar"
+msgstr "تصویر کاربر"
+
+#: users/models.py:21
+msgid "Users's Avatar"
+msgstr "تصویر کاربر"
+
+#: users/models.py:27
+msgid "User Profile"
+msgstr "پروفایل کاربر"
+
+#: users/models.py:28
+msgid "Users Profiles"
+msgstr "پروفایل های کاربران"

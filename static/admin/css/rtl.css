@@ -1,0 +1,17 @@
+thead th {
+    text-align: right; !important;
+}
+
+th{
+    text-align: right; !important;
+}
+
+
+
+.changelink {
+    margin-left: 10px;
+}
+
+.aligned label {
+    float:right; !important;
+}
