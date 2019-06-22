@@ -3,11 +3,19 @@ from django.utils.translation import ugettext as _
 
 
 class Receiver(models.Model):
+    """
+        A phone number used by message to send messages to
+    """
+
     phone_number = models.CharField(max_length=15, verbose_name=_("Phone Number"),
                                     help_text=_("Receivers phone number"))
 
 
 class Message(models.Model):
+    """
+        A message with multiple recipients (or single recipient )
+    """
+
     to = models.ManyToManyField(Receiver, related_name="inbox", verbose_name=_("Recipients of the message"),
                                 help_text=_("Recipients of the message"))
     message = models.CharField(max_length=500, verbose_name=_("Message Text"), help_text=_("Message Text"))
@@ -18,6 +26,10 @@ class Message(models.Model):
 
 
 class Operator(models.Model):
+    """
+        The Operator that messages are sent by
+    """
+
     name = models.CharField(max_length=255, verbose_name=_("Operator Name"), help_text=_("A name for the operator"))
 
     username = models.CharField(max_length=255, verbose_name=_("Username"), help_text=_("User name given by operator"))
@@ -30,6 +42,8 @@ class Operator(models.Model):
                                          help_text=_("Time in minutes before you can try to send a message again"))
 
 
+    def send_message(self,message):
+        pass
 
 
 
