@@ -31,18 +31,23 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'tag.apps.TagConfig',
+    'jet.dashboard',
     'jet',
-    'questionnaire.apps.QuestionnaireConfig',
-    'bookCore.apps.BookcoreConfig',
-    'users.apps.UsersConfig',
-    'phonenumber_field',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'tag.apps.TagConfig',
+    'questionnaire.apps.QuestionnaireConfig',
+    'bookCore.apps.BookcoreConfig',
+    'users.apps.UsersConfig',
+
+    'phonenumber_field',
+
 ]
 
 MIDDLEWARE = [
@@ -132,7 +137,6 @@ LOCALE_PATHS = (
 )
 
 
-
 MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "local_static"),
@@ -140,3 +144,4 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
