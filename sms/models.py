@@ -1,14 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext as _
-
-
-class Receiver(models.Model):
-    """
-        A phone number used by message to send messages to
-    """
-
-    phone_number = models.CharField(max_length=15, verbose_name=_("Phone Number"),
-                                    help_text=_("Receivers phone number"))
+from furl import furl
+from rest_framework.utils import json
 
 
 class Message(models.Model):
@@ -16,8 +9,8 @@ class Message(models.Model):
         A message with multiple recipients (or single recipient )
     """
 
-    to = models.ManyToManyField(Receiver, related_name="inbox", verbose_name=_("Recipients of the message"),
-                                help_text=_("Recipients of the message"))
+    to = models.CharField(max_length=15, verbose_name=_("Recipient of the message"),
+                                help_text=_("Recipient of the message"))
     message = models.CharField(max_length=500, verbose_name=_("Message Text"), help_text=_("Message Text"))
 
     block_code = models.IntegerField(blank=True, null=True, verbose_name=_("Block Code"), help_text=_("Block Code"))
@@ -44,7 +37,20 @@ class Operator(models.Model):
     api_endpoint = models.CharField(max_length=500, verbose_name=_("API Endpoint"), help_text=_("API Endpoint"))
 
     def send_message(self, message):
-        pass
+        """
+        Take a message and sends it
+        :param message:
+        :return:
+        """
+
+        api = furl(self.api_endpoint)
+
+        api.args['uname'] = self.username
+        api.args['pass'] = self.password
+        api.args['from'] = self.sender
+        api.args['msg'] = message.message
+
+
 
 
 
