@@ -41,8 +41,9 @@ class Operator(models.Model):
     retry_gap_time = models.IntegerField(verbose_name=_("Retry Gap Time"),
                                          help_text=_("Time in minutes before you can try to send a message again"))
 
+    api_endpoint = models.CharField(max_length=500, verbose_name=_("API Endpoint"), help_text=_("API Endpoint"))
 
-    def send_message(self,message):
+    def send_message(self, message):
         pass
 
 
