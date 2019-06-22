@@ -38,6 +38,9 @@ class Operator(models.Model):
 
     api_endpoint = models.CharField(max_length=500, verbose_name=_("API Endpoint"), help_text=_("API Endpoint"))
 
+    def __str__(self):
+        return self.name
+
     def send_message(self, message):
         """
         Take a message and sends it
@@ -55,27 +58,29 @@ class Operator(models.Model):
 
         # check for retry gap
         now = timezone.now()
+        if message.last_try is None:
+            message.last_try = now - timezone.timedelta(minutes=self.retry_gap_time*2)
 
         if now - message.last_try >= timezone.timedelta(minutes=self.retry_gap_time):
             # eligible to retry
 
             message.last_try = now
-            r = requests.get(api.url())
+            r = requests.get(api.url)
 
             try:
                 block_code = int(r.text)
                 message.block_code = block_code
             except:
                 err = json.loads(r.text)
-                return err[1]
+                return {'status': 'NOK', 'msg': err[1]}
 
             # todo: fix bug on retry gap if fails
             message.save()
 
-            return _("Message Sent")
+            return {'status': 'OK', 'msg': _("Message Sent")}
 
         else:
-            return _("try again later")
+            return {'status': 'NOK', 'msg': _("try again later")}
             # not eligible to retry
 
 
