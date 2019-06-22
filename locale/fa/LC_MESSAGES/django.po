@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-22 12:15+0430\n"
+"POT-Creation-Date: 2019-06-22 18:59+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,6 +296,106 @@ msgstr "توضیحات"
 #: .\questionnaire\models.py:118
 msgid "Description for the asked question"
 msgstr "توضیح سوال"
+
+#: .\sms\admin.py:32
+msgid "Send Message"
+msgstr "ارسال پیام"
+
+#: .\sms\apps.py:7
+msgid "Sms"
+msgstr "اس ام اس"
+
+#: .\sms\models.py:14 .\sms\models.py:15
+msgid "Recipient of the message"
+msgstr "گیرنده پیام"
+
+#: .\sms\models.py:16
+msgid "Message Text"
+msgstr "متن پیام"
+
+#: .\sms\models.py:18
+#, fuzzy
+#| msgid "Book Core"
+msgid "Block Code"
+msgstr "کتاب"
+
+#: .\sms\models.py:23
+#, fuzzy
+#| msgid "Send Message"
+msgid "Message"
+msgstr "ارسال پیام"
+
+#: .\sms\models.py:24
+#, fuzzy
+#| msgid "Send Message"
+msgid "Messages"
+msgstr "ارسال پیام"
+
+#: .\sms\models.py:32
+msgid "Operator Name"
+msgstr "نام اپراتور"
+
+#: .\sms\models.py:32
+msgid "A name for the operator"
+msgstr "یک نام دلخواه برای این اپراتور"
+
+#: .\sms\models.py:34
+#, fuzzy
+#| msgid "Users"
+msgid "Username"
+msgstr "کاربران"
+
+#: .\sms\models.py:34
+msgid "User name given by operator"
+msgstr "نام کاربری از پنل اس ام اس"
+
+#: .\sms\models.py:35
+msgid "Password"
+msgstr "کلمه عبور"
+
+#: .\sms\models.py:35
+msgid "Password given by operator"
+msgstr "کلمه عبور پنل اس ام اس"
+
+#: .\sms\models.py:37
+msgid "Sender Phone Number"
+msgstr "شماره ارسال کننده"
+
+#: .\sms\models.py:38
+msgid "The operator phone number"
+msgstr "شماره ارسال کننده اپراتور"
+
+#: .\sms\models.py:40
+msgid "Retry Gap Time"
+msgstr "زمان تکرار ارسال اس ام اس"
+
+#: .\sms\models.py:41
+msgid "Time in minutes before you can try to send a message again"
+msgstr "دقایقی که تا قبل از آن نمیتوان اس ام اس را دوباره ارسال کرد"
+
+#: .\sms\models.py:43
+msgid "API Endpoint"
+msgstr "api"
+
+#: .\sms\models.py:49
+#, fuzzy
+#| msgid "Operator Name"
+msgid "SMSOperator"
+msgstr "نام اپراتور"
+
+#: .\sms\models.py:50
+#, fuzzy
+#| msgid "Operator Name"
+msgid "SMSOperators"
+msgstr "نام اپراتورها"
+
+#: .\sms\models.py:88
+msgid "Message Sent"
+msgstr "پیام ارسال شد"
+
+#: .\sms\models.py:91
+msgid "try again later"
+msgstr "بعدا دوباره امتحان کنید"
 
 #: .\tag\apps.py:7 .\tag\models.py:33
 msgid "Tag"

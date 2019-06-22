@@ -19,6 +19,10 @@ class Message(models.Model):
 
     last_try = models.DateTimeField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = _("Message")
+        verbose_name_plural = _("Messages")
+
 
 class Operator(models.Model):
     """
@@ -40,6 +44,10 @@ class Operator(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = _("Operator")
+        verbose_name_plural = _("Operators")
 
     def send_message(self, message):
         """
