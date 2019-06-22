@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 from furl import furl
+from django.utils import timezone
+import requests
 from rest_framework.utils import json
 
 
@@ -49,6 +51,33 @@ class Operator(models.Model):
         api.args['pass'] = self.password
         api.args['from'] = self.sender
         api.args['msg'] = message.message
+        api.args['to'] = message.to
+
+        # check for retry gap
+        now = timezone.now()
+
+        if now - message.last_try >= timezone.timedelta(minutes=self.retry_gap_time):
+            # eligible to retry
+
+            message.last_try = now
+            r = requests.get(api.url())
+
+            try:
+                block_code = int(r.text)
+                message.block_code = block_code
+            except:
+                err = json.loads(r.text)
+                return err[1]
+
+            # todo: fix bug on retry gap if fails
+            message.save()
+
+            return _("Message Sent")
+
+        else:
+            return _("try again later")
+            # not eligible to retry
+
 
 
 
