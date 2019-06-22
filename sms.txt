@@ -1,0 +1,2 @@
+number: 985000189
+api: http://37.130.202.188/class/sms/webservice/send_url.php
