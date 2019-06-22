@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'questionnaire.apps.QuestionnaireConfig',
     'bookCore.apps.BookcoreConfig',
     'users.apps.UsersConfig',
+    'sms.apps.SmsConfig',
 
     'phonenumber_field',
 
