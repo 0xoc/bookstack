@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url,include
+from django.urls import path
 from django.contrib import admin
 from . import settings
 from django.conf.urls.static import static
@@ -23,6 +24,8 @@ urlpatterns = [
     url(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
 
     url(r'^admin/', admin.site.urls),
+
+    path('api/v1/', include('api_v1.urls'))
 ]
 
 
