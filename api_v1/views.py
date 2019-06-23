@@ -32,11 +32,11 @@ class Login(CreateAPIView):
             user = User.objects.create(username=phone_number)
             profile = UserProfile.objects.create(user=user, phone_number=phone_number)
 
-        password = randint(10000000, 99999999)
+        password = randint(1000, 9999)
 
         user.set_password(password)
 
-        message = Message(message="کلمه عبور یک بار مصرف بوک استک شما: %d" % password, to=phone_number)
+        message = Message(message="کلمه عبور یکبار مصرف بوک استک شما: %d" % password, to=phone_number)
         operator = Operator.objects.first()
         operator.send_message(message)
         return Response({"password": password})
