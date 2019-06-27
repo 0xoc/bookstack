@@ -6,6 +6,7 @@ django-jet==1.0.8
 django-phonenumber-field==3.0.1
 djangorestframework==3.9.4
 furl==2.0.0
+gunicorn==19.9.0
 idna==2.8
 orderedmultidict==1.0
 phonenumbers==8.10.13
